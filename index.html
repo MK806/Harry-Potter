@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ka" style="height: 100%">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ჰარი პოტერი</title>
+    <link rel="icon" type="png" href="https://static.thenounproject.com/png/7729-200.png" />
+    <br />
+</head>
+<style>
+     :root {
+        --main-black: #000000;
+        --main-grey: #add8e6;
+        --main-ivory: #d3d3d3;
+        --main-pink: #bc8f8f;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+    
+    html {
+        box-sizing: border-box;
+        font-size: 50%;
+        scroll-behavior: smooth;
+    }
+    
+    @media (max-width: 37.5em) {
+        html {
+            font-size: 50%;
+        }
+    }
+    
+    @media (max-width: 75em) {
+        html {
+            font-size: 60%;
+        }
+    }
+    
+    @media (max-width: 31.25em) {
+        html {
+            font-size: 40%;
+        }
+    }
+    
+    @media (max-width: 31.25em) {
+        .plot-section {
+            padding: 6rem 1rem;
+        }
+        .plot-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 28.75em) {
+        .nav {
+            justify-content: center;
+        }
+        .nav-list {
+            margin: 0 1rem;
+        }
+    }
+    
+    @media (max-width: 28.75em) {
+        .plot-section-header {
+            font-size: 4rem;
+        }
+    }
+    
+    @media (max-width: 28.75em) {
+        .films-section-header {
+            font-size: 4rem;
+        }
+    }
+    
+    @media (max-width: 30.625em) {
+        .films-section {
+            padding: 6rem 1rem;
+        }
+        .films-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 28.75em) {
+        footer {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    body {
+        font-family: "Garamond";
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--main-black);
+    }
+    
+    h1,
+    h2 {
+        font-family: "Times New Roman";
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 6rem;
+        color: white;
+    }
+    
+    h2 {
+        font-size: 4.2rem;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--main-black);
+    }
+    
+    img {
+        display: block;
+        width: 100%;
+    }
+    
+    .nav {
+        display: flex;
+        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--main-grey);
+        box-shadow: 0 2px 0 rgba(255, 179, 235, 0.4);
+        z-index: 10;
+    }
+    
+    .nav-list {
+        display: flex;
+        margin-right: 2rem;
+    }
+    
+    .nav-list a {
+        display: block;
+        font-size: 2.2rem;
+        padding: 2rem;
+    }
+    
+    .nav-list a:hover {
+        background: var(--main-ivory);
+    }
+    
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-image: url(https://www.wallpapertip.com/wmimgs/9-97906_harry-potter-hogwarts-hd.jpg);
+        background-position: center;
+    }
+    
+    .about-section>p {
+        font-size: 3rem;
+        font-weight: 500;
+        font-style: bold;
+        color: white;
+        padding: 40px;
+        text-align: center;
+    }
+    
+    .plot-section {
+        text-align: center;
+        padding: 6rem 2rem;
+        background: var(--main-ivory);
+    }
+    
+    .plot-section-header {
+        max-width: 500px;
+        margin: 0 auto 6rem auto;
+        border-bottom: 0.4rem solid #0040ff;
+        margin-top: 100px;
+        padding: 25px;
+    }
+    
+    .code {
+        color: var(--main-pink);
+        transition: color 0.3s ease-out;
+    }
+    
+    .films-section-header {
+        max-width: 500px;
+        margin: 0 auto 6rem auto;
+        border-bottom: 0.4rem solid #0040ff;
+        padding: 25px;
+        margin-top: 100px;
+    }
+    
+    .films-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 4rem;
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+    }
+    
+    .films {
+        background: var(--main-pink);
+        box-shadow: 1px 1px 2px rgba(3, 20, 80, 0.5);
+        border-radius: 3px;
+    }
+    
+    .films:hover .code {
+        color: #4d0039;
+    }
+    
+    .films-image {
+        height: calc(100% - 6.8rem);
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .films-title {
+        font-size: 1.6rem;
+        padding: 1.5rem 0.5rem;
+        text-align: center;
+    }
+    
+    footer {
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+        background: var(--main-grey);
+        border-top: 4px solid #0040ff;
+        text-indent: 250px;
+    }
+    
+    footer>p {
+        margin: 2rem;
+    }
+    
+    footer i {
+        vertical-align: center;
+    }
+</style>
+
+<body>
+    <nav id="navbar" class="nav">
+        <ul class="nav-list">
+            <li>
+                <a href="#about-section">შესახებ</a>
+            </li>
+            <li>
+                <a href="#plot">სიუჟეტი</a>
+            </li>
+            <li>
+                <a href="#films">ფილმები</a>
+            </li>
+        </ul>
+    </nav>
+    <section id="about-section" class="about-section">
+        <h1>ჰარი პოტერი</h1>
+        <p>
+            ჯოან როულინგის მიერ დაწერილი 7 ნაწილიანი ფენტეზის ჟანრის წიგნების სერია. იგი ჰარი პოტერის, ახალგაზრდა ჯადოქრის თავგადასავლებს ასახავს და ძირითადად ბავშვებისთვისაა განკუთვნილი. წიგნი მთელ მსოფლიოშია ცნობილი და უამრავ ენაზეა თარგმნილი, მათ შორის ქართულადაც.
+            დიდი პოპულარობით სარგებლობს წიგნის ეკრანიზაციაც.
+        </p>
+    </section>
+    <section id="plot" class="plot-section">
+        <h2 class="plot-section-header">სიუჟეტი</h2>
+        <p>
+            ჰარი პოტერი ერთი უცნაური თვისებების მქონე ობოლი ბიჭია, რომელიც დარსლების ოჯახთან, დეიდასთან და ბიძიასთან ერთად ცხოვრობს ქალაქ ლითლ უინგში, პრაივიტ დრაივის #4 სახლში. ყველაფერი ერთ ჩვეულებრივ დღეს დაიწყო, როდესაც ჰარიმ, რომელსაც დეიდას და ბიძიას გარდა
+            არავინ ჰყავდა, წერილი მიიღო, თუმცა მისი წაკითხვა ვერ მოასწრო, რადგან ბიძიამ წაართვა. ამის შემდეგ სახლში წერილების ნამდვილი წვიმა წამოვიდა, რასაც დარსლები ჰარისთან ერთად ერთ მიყრუებულ კუნძულზე გაექცნენ. ეს სწორედ ჰარის მე-11 დაბადების დღემდე
+            რამდენიმე დღით ადრე მოხდა. ჰარის დაბადების დღეზე კი მასთან მივიდა ნახევრად გოლიათი ჰაგრიდი და უთხრა, რომ იგი ჯადოქარია. უამბო თავისი მშობლების გარდაცვალების ნამდვილ მიზეზზეც, ისინი კი თავისი დროის უდიდესმა ბოროტმა ჯადოქარმა, ლორდმა ვოლდემორმა
+            დახოცა. მან ჰარის მოკვლაც სცადა, თუმცა უშედეგოდ. ჰარისთვის წერილი გამოგზავნილი იყო ჯადოქრობისა და მაგიის სკოლა ჰოგვორტსიდან. ამის შემდეგ ჰარი ჰოგვორტსში წავიდა სასწავლებლად და იქ ბევრი მეგობარი შეიძინა. ბიჭი მიხვდა, რომ ის თავის სამყაროში
+            აღმოჩნდა, იქ მას ყველა იცნობდა და ყველა პატივს სცემდა, რადგან ის ერთადერთი ადამიანი იყო, ვინც ბოროტ ძლევამოსილ ჯადოქარ, ვოლდემორს წინ გადაუდგა და დაამარცხა ჯერ კიდევ მაშინ, როდესაც ის ჩვილი იყო. ჰარის ამ ამბიდან არაფერი ახსოვდა, თუმცა მის
+            სხეულზე დარჩენილი ნაიარევი ამას ადასტურებდა. ის თუ რატომ სურდა ვოლდემორს ჰარის მოკვლა, ირკვევა წიგნის მეხუთე ნაწილში ჰარი პოტერი და ფენიქსის ორდენი. საბოლოოდ ჰარი შეძლებს ვოლდემორის დამარცხებას, ამას იგი თავის მეგობარ რონთან და ჰერმიონთან
+            ერთად მოახერხებს. მათ შეძლეს და გაანადგურეს ვოლდემორის მიერ შექმნილი ჰორკრუქსები, სადაც მისი სულის ნაწილები იყო განთავსებული.
+        </p>
+    </section>
+    <section id="films" class="films-section">
+        <h2 class="films-section-header">ფილმები</h2>
+        <div class="films-grid">
+            <a href="https://www.adjaranet.com/movies/1845/Harry-Potter-and-the-Sorcerer's-Stone?lang=GEO&quality=SD" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://static.wikia.nocookie.net/warner-bros-entertainment/images/0/0e/Philostone.jpg/revision/latest?cb=20160307194850" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და ფილოსოფიური ქვა
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <a href="https://www.adjaranet.com/movies/164/Harry-Potter-and-the-Chamber-of-Secrets" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://upload.wikimedia.org/wikipedia/en/c/c0/Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და საიდუმლო ოთახი
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <a href="https://www.adjaranet.com/movies/168/Harry-Potter-and-the-Prisoner-of-Azkaban?lang=GEO&quality=SD" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_.jpg" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და აზკაბანის ტყვე
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+            <a href="https://www.adjaranet.com/movies/165/Harry-Potter-and-the-Goblet-of-Fire?lang=GEO&quality=SD" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_FMjpg_UX1000_.jpg" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და ცეცხლოვანი თასი
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+            <a href="https://www.adjaranet.com/movies/166/Harry-Potter-and-the-Order-of-the-Phoenix?lang=GEO&quality=SD" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://static.wikia.nocookie.net/harrypotter/images/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg/revision/latest?cb=20161002074140" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და ფენიქსის ორდენი
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+            <a href="https://www.adjaranet.com/movies/950/Harry-Potter-and-the-Half-Blood-Prince?lang=GEO&quality=SD" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_.jpg" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და ნახევარპრინცი
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+            <a href="https://www.adjaranet.com/movies/1355/Harry-Potter-and-the-Deathly-Hallows-Part-1?lang=GEO&quality=SD" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://m.media-amazon.com/images/M/MV5BMTQ2OTE1Mjk0N15BMl5BanBnXkFtZTcwODE3MDAwNA@@._V1_.jpg" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და სიკვდილის საჩუქრები (ნაწილი 1)
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+            <a href="https://www.adjaranet.com/movies/1356/Harry-Potter-and-the-Deathly-Hallows-Part-2?lang=GEO&quality=SD" target="_blank" class="films project-tile">
+                <img class="films-image" src="https://images-na.ssl-images-amazon.com/images/I/91aHcwEoNyL._RI_.jpg" alt="films" />
+                <p class="films-title">
+                    <span class="code">&lt;</span> ჰარი პოტერი და სიკვდილის საჩუქრები (ნაწილი 2)
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>
+            <i><strong
+            >"It matters not what someone is born, but what they grow to be." ―
+            Albus Dumbledore</strong
+          ></i
+        >
+      </p>
+      <p>
+        &copy;Created for
+        <a href="https://level1.ge/" target="_blank"
+          ><u>Level One Academy</u></a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
